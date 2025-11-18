@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Moxesh | Professional Video Editor</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* === Added Styles Only === */
+      .portfolio-card {
+        cursor: pointer;
+      }
+
+      .portfolio-thumbnail {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .portfolio-thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        background-color: #000; /* optional: add a neutral background */
+      }
+
+      .video-modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 9999;
+        padding: 20px;
+      }
+
+      .video-modal.open {
+        display: flex;
+      }
+
+      .video-modal .modal-inner {
+        max-width: 600px;
+        width: 100%;
+        max-height: 90vh;
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video-modal video {
+        max-height: 90vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        display: block;
+        background: #000;
+      }
+
+      .video-modal .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: #fff;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 4px;
+      }
+
+      .watch-link {
+        pointer-events: none;
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Moxesh Shah</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+      <h1 class="page-title">My Portfolio</h1>
+      <p class="page-subtitle">
+        Edited for creators, brands, and events — from reels to YouTube videos and digital
+        invitations
+      </p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number orange">9+</div>
+          <div class="stat-label">Featured Videos</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number teal">1M+</div>
+          <div class="stat-label">Audience Reached</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number yellow">100%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+      <div class="portfolio-grid">
+        <!-- 1 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762943374/1103_video-converter.com_fcdh5s.mp4"
+          data-thumb="assests/images/Portfolio1.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 1" />
+            <div class="portfolio-category shorts">Baby Shower E-Invite</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Baby Shower E-Invite</h3>
+            <p class="portfolio-description">A baby shower invite inspired by Jain tradition and Mahavir Swami</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>💌</span><span>Digital Invitation</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762927514/Sensation_upcoming_trend_final_btcsor.mp4"
+          data-thumb="assests/images/Portfolio2.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 2" />
+            <div class="portfolio-category shorts">Sensation: Cars Edition</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Sensation: Cars Edition</h3>
+            <p class="portfolio-description">This car trend has pulled in over 350K views across social platforms</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>🚀</span><span>Trend-Based Content</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762928642/Final_Short_1_c09l5o.mp4"
+          data-thumb="assests/images/Portfolio3.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 3" />
+            <div class="portfolio-category professional">Insight: Air Quality Facts</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Insight: Air Quality Facts</h3>
+            <p class="portfolio-description">Edited for clarity and impact, this AQI guide shows what the numbers really mean for you</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>🎨</span><span>Creative Content</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762942930/1107_1_ymte4a.mp4"
+          data-thumb="assests/images/Portfolio4.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 4" />
+            <div class="portfolio-category storytelling">Keeling Curve: CO₂ Facts</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Keeling Curve: CO₂ Facts</h3>
+            <p class="portfolio-description">A simple Keeling Curve explainer with clear CO₂ facts and animations I made</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>🧠</span><span>Science Explainer</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762928952/Baby_Shower_Invitation_gqswk4.mp4"
+          data-thumb="assests/images/Portfolio5.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 5" />
+            <div class="portfolio-category creative">Invitation: Our Little One</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Invitation: Our Little One</h3>
+            <p class="portfolio-description">A baby-shower invite I made with easy visuals and clean edits that match the beats</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>💌</span><span>Event Invitation</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762929172/Final_Mahavistaar_AI_Motion_qhy6w3.mp4"
+          data-thumb="assests/images/Portfolio6.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 6" />
+            <div class="portfolio-category expert">Mahavistaar AI App: Motion Ad</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Mahavistaar AI: Motion AD</h3>
+            <p class="portfolio-description">A motion-graphics ad I made for the Maharashtra govt’s Mahavistaar AI app</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>🎬</span><span>Motion Graphics</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762927536/Sequence_01_4_zj9rql.mp4"
+          data-thumb="assests/images/Portfolio7.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 7" />
+            <div class="portfolio-category advanced">Goods Shipping: Pro Reel</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Goods Shipping: Pro Reel</h3>
+            <p class="portfolio-description">I made this reel for a foreign client with clean animations and simple graphics</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>✨</span><span>Professional Edit</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762929925/Sequence_01_1_1_ytwwax.mp4"
+          data-thumb="assests/images/Portfolio8.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 8" />
+            <div class="portfolio-category documentary">Why Light Year Exists?</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Why Light Year Exists?</h3>
+            <p class="portfolio-description">An easy educational explainer I edited to show what a light year actually is</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>📚</span><span>Educational Content</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div
+          class="portfolio-card"
+          data-video="https://res.cloudinary.com/dw10do3o1/video/upload/v1762927511/Bookings_Open_-_Wedding_Sangeet_Choreography_ouqvjl.mp4"
+          data-thumb="assests/images/Portfolio9.png"
+        >
+          <div class="portfolio-thumbnail">
+            <img class="portfolio-thumb" src="" alt="Video thumbnail 9" />
+            <div class="portfolio-category finance">Edited: Bookings Open</div>
+          </div>
+
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Edited: Bookings Open</h3>
+            <p class="portfolio-description">A simple edit for a dance class announcing wedding and sangeet choreo bookings</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-type"><span>🕺</span><span>Booking Promo</span></div>
+              <a class="watch-link">Watch <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" aria-hidden="true">
+      <div class="modal-inner" role="dialog" aria-modal="true" aria-label="Video player">
+        <button class="close-btn" id="modalCloseBtn" aria-label="Close video">✕</button>
+        <div id="videoContainer"></div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2 class="cta-title">Ready to Create Something Amazing?</h2>
+      <p class="cta-subtitle">Let's discuss how I can help elevate your content</p>
+      <a href="contact.html" class="cta-button">Start Your Project</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>Moxesh <span class="pro-badge">Pro Editor</span></h3>
+          <p>
+            Professional video editor creating engaging content for YouTube and social media creators
+            worldwide. Let's bring your vision to life.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Get In Touch</h4>
+          <div class="footer-contact">
+            <div class="contact-item"><div class="contact-icon orange">📧</div><span>moxeshshah0802@gmail.com</span></div>
+            <div class="contact-item"><div class="contact-icon teal">📱</div><span>+91 93274 55229</span></div>
+            <div class="contact-item"><div class="contact-icon purple">👤</div><span>@edit.by.moxesh</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Moxesh. All rights reserved.</p>
+        <div class="availability"><span class="status-dot"></span>Available for new projects</div>
+      </div>
+    </footer>
+
+    <!-- === Scripts === -->
+    <script>
+      // assign thumbnails (custom or fallback)
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.portfolio-card').forEach(function (card, idx) {
+          const videoUrl = card.getAttribute('data-video') || '';
+          const customThumb = card.getAttribute('data-thumb') || '';
+          const img = card.querySelector('.portfolio-thumb');
+          let fallback = '';
+
+          if (!customThumb && videoUrl && videoUrl.endsWith('.mp4')) {
+            fallback = videoUrl.replace(/\.mp4(\?.*)?$/i, '.jpg');
+          }
+
+          const finalSrc = customThumb || fallback || 'assets/thumbnails/default.jpg';
+
+          if (img) {
+            img.src = finalSrc;
+            img.loading = 'lazy';
+
+            if (!img.alt || img.alt.trim() === '') {
+              img.alt = card.querySelector('.portfolio-title')?.textContent?.trim() || `Portfolio video ${idx + 1}`;
+            }
+          }
+        });
+      });
+
+      // open/close video modal
+      (function () {
+        const modal = document.getElementById('videoModal');
+        const videoContainer = document.getElementById('videoContainer');
+        const closeBtn = document.getElementById('modalCloseBtn');
+
+        function openModal(videoUrl) {
+          videoContainer.innerHTML = '';
+
+          const video = document.createElement('video');
+          video.controls = true;
+          video.playsInline = true; // don't force autoplay; some browsers block it — try but it's optional
+          video.autoplay = true;
+          video.muted = false;
+          video.style.maxWidth = '100%';
+          video.style.maxHeight = '90vh';
+
+          const source = document.createElement('source');
+          source.src = videoUrl;
+          source.type = 'video/mp4';
+
+          video.appendChild(source);
+          videoContainer.appendChild(video);
+
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+
+          // try to play; ignore exceptions
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              /* autoplay blocked; user can press play */
+            });
+          }
+        }
+
+        function closeModal() {
+          const vid = videoContainer.querySelector('video');
+          if (vid) {
+            try {
+              vid.pause();
+            } catch (e) {}
+          }
+
+          videoContainer.innerHTML = '';
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // clicking anywhere on card opens video
+        document.addEventListener('click', function (e) {
+          const card = e.target.closest('.portfolio-card');
+          if (!card) return;
+          const videoUrl = card.getAttribute('data-video');
+          if (!videoUrl) return;
+
+          e.preventDefault();
+          openModal(videoUrl);
+        });
+
+        // close handlers
+        closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          closeModal();
+        });
+
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+        });
+      })();
+    </script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
